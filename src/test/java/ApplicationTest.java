@@ -31,7 +31,7 @@ public class ApplicationTest {
     }
 
     @Test
-    public void shouldListBooksWhenStarting() throws Exception {
+    public void shouldCallListBooksWhenStarting() throws Exception {
         //action
         application.start();
 

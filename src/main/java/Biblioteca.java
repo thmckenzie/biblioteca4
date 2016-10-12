@@ -1,14 +1,19 @@
+import java.io.PrintStream;
 import java.util.List;
 
-/**
- * Created by tafarii on 10/12/16.
- */
-public class Biblioteca {
-    public Biblioteca(List<Book> books) {
 
+public class Biblioteca {
+    private List<Book> books;
+    private PrintStream printStream;
+
+    public Biblioteca(List<Book> books, PrintStream printStream) {
+        this.books = books;
+        this.printStream = printStream;
     }
 
     public void listBooks() {
-
+        for (Book book : books) {
+            book.displayBookDetails();
+        }
     }
 }
