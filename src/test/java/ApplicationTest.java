@@ -12,13 +12,16 @@ public class ApplicationTest {
     private PrintStream printStream;
     private Application application;
     private Biblioteca biblioteca;
+    private Menu menu;
 
 
     @Before
     public void setUp() throws Exception {
         printStream = mock(PrintStream.class);
         biblioteca = mock(Biblioteca.class);
-        application = new Application(printStream, biblioteca);
+        menu = mock(Menu.class);
+        application = new Application(printStream, biblioteca, menu);
+
     }
 
     @Test
@@ -31,11 +34,11 @@ public class ApplicationTest {
     }
 
     @Test
-    public void shouldCallListBooksWhenStarting() throws Exception {
+    public void shouldCallListOptionsWhenStarting() throws Exception {
         //action
         application.start();
 
         //assert
-        verify(biblioteca).listBooks();
+        verify(menu).listOptions();
     }
 }
